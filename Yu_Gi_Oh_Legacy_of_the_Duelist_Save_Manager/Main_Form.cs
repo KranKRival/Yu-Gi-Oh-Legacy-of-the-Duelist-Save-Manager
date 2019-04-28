@@ -147,16 +147,6 @@ namespace SaveEditorSwitch
             }
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit(); // Exit
-        }
-
-        private void MinimizeButton_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized; // Minimize
-        }
-
         private void monoFlat_LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://gbatemp.net/members/kuranku.476902/");
@@ -178,5 +168,9 @@ namespace SaveEditorSwitch
             }
         }
 
+        private void ImportSaveButton_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
