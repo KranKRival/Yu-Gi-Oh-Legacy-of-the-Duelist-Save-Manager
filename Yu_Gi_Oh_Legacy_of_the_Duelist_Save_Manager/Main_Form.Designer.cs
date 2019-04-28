@@ -32,6 +32,7 @@
             this.openSaveDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.Main_Theme_Controller = new MonoFlat.MonoFlat_ThemeContainer();
+            this.monoFlat_LinkLabel1 = new MonoFlat.MonoFlat_LinkLabel();
             this.MinimizeButton = new MonoFlat.MonoFlat_Button();
             this.ExitButton = new MonoFlat.MonoFlat_Button();
             this.monoFlat_Panel2 = new MonoFlat.MonoFlat_Panel();
@@ -44,7 +45,6 @@
             this.MoneyLab = new MonoFlat.MonoFlat_TextBox();
             this.ExportSaveHandlelab = new MonoFlat.MonoFlat_Panel();
             this.ExportSaveButton = new MonoFlat.MonoFlat_Button();
-            this.monoFlat_LinkLabel1 = new MonoFlat.MonoFlat_LinkLabel();
             this.Main_Theme_Controller.SuspendLayout();
             this.monoFlat_Panel1.SuspendLayout();
             this.ExportSaveHandlelab.SuspendLayout();
@@ -79,6 +79,23 @@
             this.Main_Theme_Controller.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.Main_Theme_Controller.TabIndex = 6;
             this.Main_Theme_Controller.Text = "           Yu-Gi-Oh! Legacy of the Duelist Save Manager";
+            // 
+            // monoFlat_LinkLabel1
+            // 
+            this.monoFlat_LinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.monoFlat_LinkLabel1.AutoSize = true;
+            this.monoFlat_LinkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.monoFlat_LinkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.monoFlat_LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.monoFlat_LinkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(41)))), ((int)(((byte)(42)))));
+            this.monoFlat_LinkLabel1.Location = new System.Drawing.Point(275, 247);
+            this.monoFlat_LinkLabel1.Name = "monoFlat_LinkLabel1";
+            this.monoFlat_LinkLabel1.Size = new System.Drawing.Size(124, 20);
+            this.monoFlat_LinkLabel1.TabIndex = 16;
+            this.monoFlat_LinkLabel1.TabStop = true;
+            this.monoFlat_LinkLabel1.Text = "Created By KranK";
+            this.monoFlat_LinkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(41)))), ((int)(((byte)(42)))));
+            this.monoFlat_LinkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.monoFlat_LinkLabel1_LinkClicked);
             // 
             // MinimizeButton
             // 
@@ -187,11 +204,12 @@
             this.ImportSaveButton.TabIndex = 6;
             this.ImportSaveButton.Text = "Import Save";
             this.ImportSaveButton.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.ImportSaveButton.Click += new System.EventHandler(this.ImportSaveButton_Click_1);
+            this.ImportSaveButton.Click += new System.EventHandler(this.ImportSaveButton_Click);
             // 
             // MoneyLab
             // 
             this.MoneyLab.BackColor = System.Drawing.Color.Transparent;
+            this.MoneyLab.Enabled = false;
             this.MoneyLab.Font = new System.Drawing.Font("Tahoma", 11F);
             this.MoneyLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(183)))), ((int)(((byte)(191)))));
             this.MoneyLab.Image = null;
@@ -204,6 +222,7 @@
             this.MoneyLab.TabIndex = 4;
             this.MoneyLab.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.MoneyLab.UseSystemPasswordChar = false;
+            this.MoneyLab.TextChanged += new System.EventHandler(this.MoneyLab_TextChanged);
             // 
             // ExportSaveHandlelab
             // 
@@ -229,23 +248,6 @@
             this.ExportSaveButton.Text = "Export Save";
             this.ExportSaveButton.TextAlignment = System.Drawing.StringAlignment.Center;
             this.ExportSaveButton.Click += new System.EventHandler(this.ExportSaveButton_Click);
-            // 
-            // monoFlat_LinkLabel1
-            // 
-            this.monoFlat_LinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.monoFlat_LinkLabel1.AutoSize = true;
-            this.monoFlat_LinkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.monoFlat_LinkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.monoFlat_LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.monoFlat_LinkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(41)))), ((int)(((byte)(42)))));
-            this.monoFlat_LinkLabel1.Location = new System.Drawing.Point(275, 247);
-            this.monoFlat_LinkLabel1.Name = "monoFlat_LinkLabel1";
-            this.monoFlat_LinkLabel1.Size = new System.Drawing.Size(124, 20);
-            this.monoFlat_LinkLabel1.TabIndex = 16;
-            this.monoFlat_LinkLabel1.TabStop = true;
-            this.monoFlat_LinkLabel1.Text = "Created By KranK";
-            this.monoFlat_LinkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(41)))), ((int)(((byte)(42)))));
-            this.monoFlat_LinkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.monoFlat_LinkLabel1_LinkClicked);
             // 
             // Main_Form
             // 

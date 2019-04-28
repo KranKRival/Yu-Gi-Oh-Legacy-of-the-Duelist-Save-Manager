@@ -115,7 +115,7 @@ namespace SaveEditorSwitch
             return *(uint*)((byte*)p + Offset);
         }
 
-        private unsafe void ImportSaveButton_Click_1(object sender, EventArgs e)
+        private unsafe void ImportSaveButton_Click(object sender, EventArgs e)
         {
             openSaveDialog.Filter = "DAT files (*.dat)|*.dat|All files (*.*)|*.*";
             if (openSaveDialog.ShowDialog() == DialogResult.OK)
@@ -124,6 +124,7 @@ namespace SaveEditorSwitch
                 fixed (byte* p = savegame)
                 {
                     ExportSaveButton.Enabled = true; // Enable Export button after open
+                    MoneyLab.Enabled = true; // Enable Money Input
                     SaveFileSizeLabel.Text = "Save File Size: " + GetFileSize((int)savegame.Length); // Read Save Size
                     UpdateChecksum(p); // Get Checksum
                     MoneyLab.Text = Convert.ToString(ReadUint32(p, 0xF74)); // Read Money !
@@ -160,5 +161,22 @@ namespace SaveEditorSwitch
         {
             System.Diagnostics.Process.Start("https://gbatemp.net/members/kuranku.476902/");
         }
+
+        private unsafe void MoneyLab_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int temp = Convert.ToInt32(MoneyLab.Text); // Workaround To check if Not Number Entered in the textbox
+            }
+            catch (Exception h)
+            {
+                MessageBox.Show("Enter number From 0 to 999999999", "Wrong Input: " + MoneyLab.Text[MoneyLab.Text.Length - 1]);
+                fixed (byte* p = savegame)
+                {
+                    MoneyLab.Text = Convert.ToString(ReadUint32(p, 0xF74)); // Read Money !
+                }
+            }
+        }
+
     }
 }
